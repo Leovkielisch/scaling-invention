@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Quiz</title>
+    <script>
+      function checkAnswer() {
+        var radios = document.getElementsByName("answer");
+        var correctAnswer = "c"; // replace with the correct answer
+        var userAnswer = "";
+        for (var i = 0; i < radios.length; i++) {
+          if (radios[i].checked) {
+            userAnswer = radios[i].value;
+          }
+        }
+        if (userAnswer === correctAnswer) {
+          document.getElementById("result").innerHTML = "Correct!";
+        } else {
+          document.getElementById("result").innerHTML = "Sorry, that's incorrect.";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>JavaScript Quiz</h1>
+    <h2>Question:</h2>
+    <p>What is the capital city of France?</p>
+    <form>
+      <input type="radio" name="answer" value="a">London<br>
+      <input type="radio" name="answer" value="b">New York City<br>
+      <input type="radio" name="answer" value="c">Paris<br>
+    </form>
+    <button onclick="checkAnswer()">Submit Answer</button>
+    <div id="result"></div>
+  </body>
+</html>
